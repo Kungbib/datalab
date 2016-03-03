@@ -1,0 +1,8 @@
+@prefix : <http://bibframe.org/vocab/> .
+
+<http://data.lib.ltu.se/hold/item/123> a :Item ;
+    :heldBy <https://libris.kb.se/library/LTUd> ;
+    :itemOf <http://libris.kb.se/resource/bib/12081234> ;
+    :electronicLocator "http://proxy.lib.ltu.se/login?url={targeturl}" ;
+    :copyNote "Online access for LTU",
+        "Springer eBooks (Complete English Language/International Collection 2010)" .

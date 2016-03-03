@@ -1,0 +1,14 @@
+@prefix : <http://schema.org/> .
+
+[] a :Offer ;
+    # NOTE: schema.org actually uses :seller; we would like an :offerer property
+    :provider <https://libris.kb.se/library/LTUd> ;
+    :itemOffered <http://data.lib.ltu.se/hold/item/123> .
+
+<http://data.lib.ltu.se/hold/item/123> a :IndividualProduct ;
+    :model <http://libris.kb.se/resource/bib/12081234> ;
+    :associatedMedia [ a :MediaObject ;
+            :contentUrl "http://proxy.lib.ltu.se/login?url={targeturl}" ;
+            :description "Online access for LTU",
+                "Springer eBooks (Complete English Language/International Collection 2010)"
+        ] .
