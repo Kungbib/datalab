@@ -1,0 +1,77 @@
+
+
+</person/marie-curie> a sdo:Person;
+    sdo:name "Marie Curie";
+    sdo:name "#%&"@ch;
+    sdo:birthYear "18uu"^^edtf:EDTF-level2 .
+
+</person/marie-curie/entry> a skos:Concept, :PersonTerm;
+    skos:prefLabel "Curie, Marie 18uu-19uu";
+    skos:prefLabel "<span property=familyName>Curie</span>, <span property=givenName>Marie</span> <datetime property=birthDate>18uu</datetime>-<datetime property=deathDate>19uu</datetime>"^^rdf:HTML;
+    foaf:focus </person/marie-curie>;
+    dc:created </cataloguer/kerstin>;
+    skos:inScheme </sao>;
+    :transliteratedForm [
+            <#b> a Term; # ...
+        ];
+    skos:exactMatch [
+            skos:prefLabel "Curie, Marie (18uu-19uu)"
+        ], [
+            skos:prefLabel "Marie Curie, scientist (18uu-19uu)"
+        ] .
+
+#----
+
+</org/kb/entry> a skos:Concept, :OrganizationTerm;
+    rdfs:label "Kungl. Biblioteket";
+    skos:inScheme </sao>;
+    skos:broader [ a skos:Concept, :OrganizationTerm;
+            rdfs:label "Sverige" ];
+    foaf:focus </org/kb> .
+
+</org/kb> a sdo:Organization;
+    owl:sameAs <http://dbpedia.org/resource/National_Library_Of_Sweden> .
+
+
+## --- Usage --- ##
+
+
+<serial> a :Serial;
+    # MARC-form
+    :addedEntry [
+            :object </auth/123>;
+            :roleOfTheFocusOfTheObject :publisher;
+        ] ;
+    # Our current (over?)ambition
+    :influencedBy </resource/auth/abc123> .
+    :publisher _:o1 .
+
+
+</auth/abc123> a skos:Concept, :OrganizationTerm;
+    rdfs:label "Wahlströms";
+    foaf:focus </resource/auth/abc123> .
+
+</resource/auth/abc123> a foaf:Organization;
+    foaf:name "Wahlströms förlag" .
+
+## maintaining a skos substrate in parallell?
+
+# NOTE: don't model it like this...
+<bib/123> a :PaperbackBook;
+  :workClassification [
+      a :WorkTerm;
+      :broaderClassification <fiction>; :broaderSubject <middle-earth>;
+      :broaderIndexEntry <tolkien>;
+      :broaderEntry [ a :PersonTerm ]
+    ];
+  :broaderAddedEntry [ a :PersonTerm; :role :illustrator ] .
+
+
+## --- Model & Surface Data Map --- ##
+
+# TODO: coordinate relations, e.g. :broader and :isPartOf
+
+[] a :PresentationLabel;
+  :template (:lastName ", " :firstName);
+  :resultProperty sdo:name .
+

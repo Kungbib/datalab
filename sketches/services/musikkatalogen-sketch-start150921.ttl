@@ -1,0 +1,42 @@
+prefix : <http://schema.org/>
+prefix xhv: <http://www.w3.org/1999/xhtml/vocab#>
+base <https://musikkatalogen.kb.se/>
+
+</> a :CollectionPage ;
+    :name "Musikkatalogen"@sv ;
+    :license <http://creativecommons.org/publicdomain/mark/1.0/> ;
+    :hasPart </alfa/1/> ,
+            </alfa/2029/>
+            # <...>,
+            .
+
+</alfa/1/> a :ItemPage ;
+    :name "Kort 1: Aagard, Cecil"@sv ;
+    :description "Aagard, Cecil Katalogkort 1 i Kungl. Bibliotekets musikkatalog."@sv ;
+    xhv:next </alfa/2/> ;
+    :isPartOf </> ;
+    #:text "... OCR-text ..." ;
+    :license <http://creativecommons.org/publicdomain/mark/1.0/> ;
+    :associatedMedia [ a :ImageObject ;
+            :contentUrl </static/alfa/0001_musik-alfa_A-AHLH/0001_alfa_20140618_0001.jpg> ;
+            :embedUrl </static/alfa/0001_musik-alfa_A-AHLH/0001_alfa_20140618_0001_view500.jpg> ;
+            :inLanguage <http://lexvo.org/id/iso639-3/swe> ;
+            :license <http://creativecommons.org/publicdomain/mark/1.0/> ;
+            :isFamilyFriendly true ;
+        ] ;
+    :mainEntity </alfa/1#verk> .
+
+</alfa/1#verk> a :MusicComposition ;
+    :composer [ a :Person;
+            :name "Curt Blomquist";
+            :sameAs <http://id.kb.se/some?type=Person&q=Curt+Blomquist>
+        ] ;
+    :lyricist [ a :Person;
+            :name "Nico";
+            :sameAs <http://id.kb.se/some?type=Person&q=Nico>
+        ] ;
+    :musicArrangement [
+            a :Person;
+            :name "Cecil Aagard";
+            :sameAs <http://id.kb.se/some?type=Person&q=Cecil+Aagard>
+        ] .

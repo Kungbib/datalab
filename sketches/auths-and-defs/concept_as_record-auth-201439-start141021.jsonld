@@ -1,0 +1,198 @@
+{
+  "@type": "PersonTerm",
+  "@id": "/person/tjchvntn/entry",
+  "sameAs": [{"@id": "/resource/auth/201439#concept"}, {"@id": "/auth/201439"}],
+  "inScheme": {"@id": "/def/scheme/sao"},
+  "prefLabel": "Tjechov, Anton, 1860-1904",
+  "broadMatch": [
+    {
+      "@id": "http://dewey.info/class/891.723/e23/",
+      "@type": "Concept",
+      "inScheme": {
+        "@id": "http://dewey.info/scheme/edition/e23/swe/",
+        "@type": "ConceptScheme",
+        "isVersionOf": {"@id": "http://dewey.info/scheme/ddc/"},
+        "language": "swe",
+        "notation": "DDC",
+        "version": "23"
+      },
+      "notation": "891.723"
+    }
+  ],
+  "notation": "201439",
+  "controlNumber": "201439",
+  "systemNumber": [
+    "(LIBRIS)9916566976"
+  ],
+  "modified": "2013-11-08T14:56:22.0+01:00",
+  "originalCatalogingAgency": { "@type": "Organization", "name": "S" },
+  "language": [
+    { "@id": "/def/languages/swe", "notation": "swe" }
+  ],
+  "encLevel": {"@id": "/def/enum/record/FullLevel"},
+  "status": {"@id": "/def/enum/record/CorrectedOrRevised"},
+  "source": [
+    {
+      "@type": "CreativeWork",
+      "label": "Rysk kärlek /  af Anton Tschechoff, 1902"
+    },
+    {
+      "@type": "CreativeWork",
+      "label": "Noveller /  Anton Tjechov, 1954"
+    },
+    {
+      "@type": "CreativeWork",
+      "label": "LC Auth"
+    },
+    {
+      "@type": "CreativeWork",
+      "label": "Bolʹšaja sovetskaja ėnciklopedija (3. izd.)"
+    }
+  ],
+  "focus": {
+    "@type": "Person",
+    "@id": "/person/tjchvntn",
+    "sameAs": {"@id": "/resource/auth/201439"},
+    "birthYear": "1860",
+    "deathYear": "1904",
+    "familyName": "Tjechov",
+    "givenName": "Anton",
+    "nationality": {
+      "@id": "/def/nationalities/e-ru---",
+      "notation": "e-ru---"
+    },
+    "note": [
+      "Rysk skönlitterär författare"
+    ],
+    "relation": [
+      {
+        "@id": "http://viaf.org/viaf/95216565",
+        "@type": "Document",
+        "comment": "VIAF"
+      },
+      {
+        "@id": "http://dbpedia.org/resource/Anton_Chekhov",
+        "@type": "Document",
+        "comment": "DBPedia"
+      },
+      {
+        "@id": "http://en.wikipedia.org/wiki/Anton_Chekhov",
+        "@type": "Document",
+        "comment": "Wikipedia"
+      },
+      {
+        "@id": "http://id.loc.gov/authorities/names/445874",
+        "@type": "Document",
+        "comment": "LC Name Authority"
+      }
+    ],
+    "sameAs": [
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Чехов",
+        "givenName": "Антон Павлович"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Čechov",
+        "givenName": "Anton Pavlovič"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Čechonte",
+        "givenName": "Antoša"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tschekhow",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tschechoff",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tšehov",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Csehov",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tjekhov",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tschéckov",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Tchekhov",
+        "givenName": "Anton"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Chekhov",
+        "givenName": "Anton Pavlovich"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Çêxov",
+        "givenName": "Anton Pavlovîç"
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Čechov",
+        "givenName": "Anton Pavlovič",
+        "focusOf": {
+          "@type": "Concept",
+          "scopeNote": "Forskningsbiblioteksform:"
+        }
+      },
+      {
+        "@type": "Person",
+        "birthYear": "1860",
+        "deathYear": "1904",
+        "familyName": "Чехов",
+        "givenName": "Антон Пaвлович",
+        "focusOf": {
+          "@type": "Concept",
+          "scopeNote": "Originalform"
+        }
+      }
+    ]
+  }
+}

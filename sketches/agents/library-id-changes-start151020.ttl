@@ -1,0 +1,84 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix dc: <http://purl.org/dc/terms/>
+prefix org: <http://www.w3.org/ns/org#>
+prefix schema: <http://schema.org/>
+prefix : <http://id.kb.se/vocab/>
+base <http://libris.kb.se/library/>
+
+
+# 1. Biblioteket har upphört. Koden får då enbart en historisk funktion - inget nytt bibliotek kan få sigel P
+
+<LotDoRD> a schema:Library;
+    :sigel "LotDoRD";
+    owl:deprecated true;
+    prov:invalidatedAtTime "2015"^^schema:Date;
+    skos:prefLabel "Library of the Department of Redundancy Department"@sv .
+
+
+# 2. Sammanslagning med annat bibliotek. På SUB slogs sigel P samman med sigel H. I Lund har flera bibliotek slagits samman till ett ( i flera fall).
+
+<SUB> a org:OrganizationalUnit, schema:Library;
+    org:unitOf <SU>;
+    org:memberOf <BIBSAM>;
+    org:memberOf <LIBRIS>;
+    skos:prefLabel "Uppsala universitetsbibliotek"@sv .
+
+</80tdtn4j1kdq5/event/201smnlg> a org:ChangeEvent;
+    prov:atTime "2011"^^schema:Date;
+    rdfs:comment "Sammanslagning."@sv;
+    org:originalOrganization <P>;
+    org:originalOrganization <H>;
+    org:resultingOrganization <SUB> .
+
+
+# 3. Bibliotek byter huvudman. Högskolan på Gotland blir en del av Uppsala universitetsbibliotek. Sigel Hgot upphör och Ugot skapas.
+
+<HGot> a org:Organization;
+    :sigel "HGot";
+    prov:invalidatedAtTime "2010-05"^^schema:Date;
+    skos:prefLabel "Högskolan på Gotland"@sv .
+
+<UU> a org:Organization, schema:EducationalOrganization;
+    skos:prefLabel "Uppsala universitet"@sv .
+
+<UUB> a org:OrganizationalUnit, schema:Library;
+    org:unitOf <Uu>;
+    skos:prefLabel "Uppsala universitetsbibliotek"@sv .
+
+<Ugot> a org:OrganizationalUnit, schema:Library;
+    :sigel "UGot";
+    org:unitOf <Uu>;
+    skos:prefLabel "Uppsala universitetsbiblioteks Högskola på Gotland"@sv .
+
+</x0td0ngjq71frs/event/2015btvhdmn> a org:ChangeEvent;
+    prov:atTime "2010-05"^^schema:Date;
+    rdfs:comment "Byte av huvudman."@sv;
+    org:originalOrganization <HGot>;
+    org:resultingOrganization <UGot> .
+
+
+# 4. Sigel som temporär (lokal) administrativ funktion. Detta kan vara olika e-sigler eller som i Lund sigel Lvrd - för användes för själva inläsningen av Vardagstrycksposter - som sedan fördes över till sigel L.
+
+</library/L/dataset/Lvrd> a schema:Dataset;
+    skos:notation "Lvrd";
+    rdfs:comment "This is not a library."@sv .
+
+
+# 5. Sigeländring för att man byter namn på organisationen. Ibland kan bibliotek vilja byta sigel för att man byter namn. Vi brukar neka det och säga att det handlar ju om en kod. Men för biblioteken ( i alla fall vissa) är sigeln en del av deras identitet.
+
+</resource/auth/121848> a org:FormalOrganization, schema:GovernmentOrganization;
+    skos:prefLabel "Kungl. Biblioteket"@sv .
+
+<S> a org:OrganizationalUnit, schema:Library;
+    :sigel "S";
+    org:unitOf </resource/auth/121848>;
+    skos:prefLabel "Kungliga Biblioteket"@sv .
+
+<SvB> a owl:Nothing; # well...
+    :sigel "SvB";
+    owl:deprecated true;
+    prov:invalidatedAtTime "1970-01-01"^^schema:Date;
+    dc:isReplacedBy <S> .

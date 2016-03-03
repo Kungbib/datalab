@@ -1,0 +1,62 @@
+@prefix : <http://libris.kb.se/def/terms/> .
+
+########
+
+</record/bib/7149593> a :Record;
+    :creator </thing/auth/NB>;
+    :prefLabel "Anteckningar från en ö";
+    :about </thing/bib/7149593>;
+    :influencedBy <http://sv.wikipedia.org/wiki/Tove_Jansson> .
+
+</thing/bib/7149593> a :Book;
+    :title "Anteckningar från en ö";
+    :responsibilityStatement "Tove Jansson, Tuulikki Pietilä";
+    #:author </thing/auth/191503>;
+    #:attributedTo </thing/auth/191503>;
+    :qualifiedAttribution [
+            :agent </thing/auth/191503>;
+            :role :author
+            #:label "Tuve Janson" # :creditedAs
+        ];
+    #:attributedTo _:verahajj ;
+    :influencedBy </thing/auth/124> .
+
+</thing/auth/191503> a :Person;
+    :name "Tuve Janson" .
+
+########
+
+</record/auth/191503> a :Record;
+    :creator </thing/auth/NB>;
+    :about </thing/auth/191503>;
+    :about </thing/auth/191503#concept> .
+
+</thing/auth/191503#concept> a :Concept;
+    :prefLabel "Jansson, Tove";
+    :altLabel "Janson, Tuve";
+    :altLabel "Hajj, Vera";
+    :focus </thing/auth/191503> .
+
+</thing/auth/191503> a :Person;
+    :name "Tove Jansson";
+    :sameAs [ :name "Tuve Janson" ];
+    :hasPersona _:verahajj .
+
+_:verahajj a :Persona;
+    :hasPersona </thing/auth/191503>;
+    :name "Vera Hajj" .
+
+#_:verahajj-concept a :Concept;
+#    :prefLabel "Hajj, Vera";
+#    :focus _:verahajj .
+
+########
+
+</record/auth/124> a :Record;
+    :creator </thing/auth/NB>;
+    :prefLabel "Pietilä, Tuulikki";
+    :about </thing/auth/124> .
+
+</thing/auth/124> a :Person;
+    :name "Tuulikki Pietilä" .
+

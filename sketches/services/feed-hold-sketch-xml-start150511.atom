@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:at="http://purl.org/atompub/tombstones/1.0"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <id>http://id.sub.su.se/feed/items</id>
+  <at:deleted-entry when="2015-06-23T08:00:55Z"
+                    ref="http://id.sub.su.se/item/1230"/>
+  <entry>
+    <id>http://id.sub.su.se/item/1937207</id>
+    <updated>2015-05-11T12:51:33Z</updated>
+    <content type="application/rdf+xml">
+      <IndividualProduct xmlns="http://schema.org/"
+                         rdf:about="http://id.sub.su.se/item/1937207">
+        <model rdf:resource="http://libris.kb.se/resource/bib/7149593"/>
+        <serialNumber>0000000000000</serialNumber>
+        <offers>
+          <Offer>
+            <availability rdf:resource="https://schema.org/PreOrder"/>
+          </Offer>
+        </offers>
+      </IndividualProduct>
+    </content>
+  </entry>
+</feed>
