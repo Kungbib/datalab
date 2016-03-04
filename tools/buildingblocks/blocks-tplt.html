@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Blocks</title>
+
+<!-- TODO: Hotlinking kb-style is NOT recommended -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/Kungbib/frontend-guide/master/dist/css/kb-style.css" />
+<link rel="stylesheet" href="blocks.css" />
+
+{% for term in terms %}
+  <article class="{{ " ".join(aslist(term[TYPE])) }}">
+    <h1>
+      <span class="type">{{ get_type_label(term) }}</span>
+      {{ get_label(term) }}
+    </h1>
+
+
+    {% if term.structprops %}
+      <dl>
+        {% if term.range %}
+          <dt>
+            Typ av {{ get_label(model[term.range[ID]]) }}
+          </dt>
+          <dd>
+            {% if term.example_types %}
+              {% for extype in term.example_types %}
+                <label><input type="radio" />{{ get_label(model[extype]) }} </label>
+              {% endfor %}
+              <label><input type="radio" /> <button>&hellip;</button> </label>
+            {% else %}
+              <select class="reftype" size="{{ len(term.example_types) }}">
+                  <option>&mdash; Välj {{ get_label(model[term.range[ID]]) }} &mdash;</option>
+              </select>
+            {% endif %}
+          </dd>
+        {% endif %}
+        {% for subprop in term.structprops %}
+          <dt>{{ get_label(subprop) }}</dt>
+          <dd>
+            {% if subprop[TYPE] == 'DatatypeProperty' %}
+              <input />
+            {% elif subprop.range %}
+              <select class="reftype"><option>&mdash; Välj {{ get_label(model[subprop.range[ID]]) }} &mdash;</option></select>
+            {% else %}
+              <select class="reftype"><option>&mdash; Välj &hellip; &mdash;</option></select>
+            {% endif %}
+          </dd>
+        {% endfor %}
+      </dl>
+    {% elif term.range %}
+      <select class="reftype"><option>&mdash; Välj {{ get_label(model[term.range[ID]]) }} &mdash;</option></select>
+    {% elif term[TYPE] == 'ObjectProperty' %}
+      <select class="reftype"><option>&mdash; Välj &hellip; &mdash;</option></select>
+    {% endif %}
+
+    {% if term[TYPE] == 'DatatypeProperty' %}
+      <input />
+    {% endif %}
+
+    {% if term.definitionByLang %}
+      <p class="definition">{{ term.definitionByLang.sv }}</p>
+    {% endif %}
+    {% if term.noteByLang %}
+      <p class="note">{{ term.noteByLang.sv }}</p>
+    {% endif %}
+    {% if term.commentByLang %}
+      <p class="comment">{{ term.commentByLang.sv }}</p>
+    {% endif %}
+
+  </article>
+{% endfor %}
+
+{% for dfn in definitions %}
+  <article class="Object">
+    <h1>
+      <span class="type">{{ get_type_label(dfn) }}</span>
+      {{ get_label(dfn) }}
+    </h1>
+    <code>{{ dfn[ID] }}</code>
+    <dl>
+      {% for k, vs in dfn.items() %}
+        {% if k[0] != '@' %}
+          {% set k = k.replace('ByLang', '') %}
+          <dt>{{ k in model and get_label(model[k]) or LABELS.get(k) or k }}</dt>
+          {% for v in aslist(vs) %}
+            {% set v = 'sv' in v and v.sv or v %}
+            <dd>
+              {% if ID in v and examples[v[ID]] %}
+                <select class="reftype">
+                  <option>{{ get_label(examples[v[ID]]) }}</option>
+                </select>
+              {% elif ID in v %}
+                <code>{{ v[ID] }}</code>
+              {% else %}
+                {{ v }}
+              {% endif %}
+            </dd>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </dl>
+  </article>
+{% endfor %}
