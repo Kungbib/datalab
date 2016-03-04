@@ -12,7 +12,7 @@ def crawl(collection_url):
         data = json.load(reader(urlopen(req)))
         for item in data['items']:
             yield item
-        next_page = data.get('nextPage')
+        next_page = data.get('next') or data.get('nextPage')
         if next_page:
             collection_url = urljoin(collection_url, next_page['@id'])
         else:
