@@ -1,0 +1,15 @@
+prefix : <https://id.kb.se/vocab/>
+
+<http://libris.kb.se/254498#it> a :Person ;
+    :birthYear "1858" ;
+    :deathYear "1940" ;
+    :familyName "Lagerlöf" ;
+    :givenName "Selma" ;
+    :hasAuthority <http://libris.kb.se/254498#concept> ;
+    :meta <http://libris.kb.se/254498> .
+
+<http://libris.kb.se/254498#concept> a :PersonTerm ;
+    :prefLabel "Lagerlöf, Selma, 1858-1940" .
+
+<http://libris.kb.se/254498> a :Record ;
+    :controlNumber "254498" .

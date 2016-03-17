@@ -1,0 +1,55 @@
+
+GRAPH <https://libris.kb.se/fnrblgr72prnf143> {
+
+    <https://libris.kb.se/fnrblgr72prnf143#it> a :CreativeWork ;
+        :title "En Perssons resa";
+        # alt. 1 (bara en sträng, ganska likt idag)
+        :creator [ :prefLabel "Persson, En 1950-" ] ;
+        # alt. 2 (mer detaljer, om en riktig men okänd person)
+        :creator [ :name "En Persson"; :birthYear "1950" ] ;
+        # alt. 3 (lite som idag men "strängen" ändras till en URI till en term)
+        :creator <https://id.kb.se/term/person/Persson,%20En%201950> ;
+        # alt. 4 (vi siktar lite bättre och hävdar att det inte är namnet utan
+        #         personen som skrivit boken)
+        :creator <https://id.kb.se/person/Persson,%20En%201950> .
+
+}
+
+
+GRAPH <https://id.kb.se/term/person/Persson,%20En%201950/data> {
+
+    # En kontrollerad namnform, länkad till en identitet
+    <https://id.kb.se/term/person/Persson,%20En%201950> a :PersonTerm ;
+        :prefLabel "Persson, En 1950-" ;
+        :focus <https://id.kb.se/person/Persson,%20En%201950> .
+
+    # En identifierad person med tillhörande påståenden
+    <https://id.kb.se/person/Persson,%20En%201950> a :Person ;
+        owl:sameAs <http://dbpedia.org/resource/Superkändis> ;
+        :givenName "En";
+        :familyName "Persson";
+        :birthYear "1950" .
+
+}
+
+
+# Samma data om personen (och mycket mer) kan finnas hos andra
+GRAPH </http://dbpedia.org/data/Superkändis> {
+
+    <http://dbpedia.org/resource/Superkändis> a :Person ;
+        :givenName "En";
+        :familyName "Persson";
+        :birthYear "1950" .
+
+}
+
+
+# Det finns fler än Superkändis som heter "En Persson" och är födda 1950
+GRAPH </http://example.org/~enpersson> {
+
+    </http://example.org/~enpersson#me> a :Person ;
+        :givenName "En";
+        :familyName "Persson";
+        :birthYear "1950" .
+
+}
