@@ -1,0 +1,63 @@
+# NOTE: This is a sketch. Not all terms used here have been defined yet.
+@prefix : <https://id.kb.se/vocab/> .
+@prefix sdo: <http://schema.org/> .
+@prefix bf1: <http://bibframe.org/vocab/> .
+@prefix bf2: <http://bibframe.org/vocab/> . # TODO: new URI?
+@base <https://libris.kb.se/> .
+
+## Things under consideration
+#
+# Which term to be used for :moreSpecifically?
+# Cf. sdo:workExample | skos:narrower | ^(sdo:model|rdfa:copy) ...
+#
+# We consider levels of specificity to be more useful than separating out
+# sdo:Offer entities from a compound sdo:SomeProducts entity. This is more in
+# line with BibFrame, although we're not sure if bf:hasComponent properly
+# conveys the notion of "more specific entity". (Also, BF1 had distinct levels
+# for "some" and "one" in bf1:HeldMaterial and bf1:HeldItem respectively,
+# whereas BF2 "only" has bf2:Item.)
+#
+# Note that putting the "access and custodian" properties on the bf1:Item is
+# more conflating than describing this using some qualified relation entity
+# (which e.g. Offer does, perhaps even bf1:Annotation do). It isn't necessarily
+# illogical though (the item is at shelf X, is owned by Y and can be lent under
+# condition Z). The utility of a qualified entity combining these facts should
+# be considered though to make an informed decision about it.
+
+
+# The Holding
+</pt0tb0rv33gksdj#it> a :SomeProducts ;
+    :acquisitionStatus :CurrentlyReceived ;
+    :numberOfItems 11 ;
+    :retentionPolicy :PermanentlyRetained ;
+    :heldBy </some?type=Organization&notation=Bibliotek1> ;
+    :holdingFor </fxql7jqr38b1dkf#it> ;
+    :moreSpecifically
+        [ a :SomeProducts ;
+            :numberOfItems 4 ;
+            :shelfControlNumber "168113" ] ,
+        [ a :SomeProducts ;
+            :numberOfItems 6 ;
+            :shelfControlNumber "164565" ] ,
+        [ a :IndividualProduct ;
+            :heldBy </some?type=Organization&notation=Bibliotek1-källaren> ;
+            :numberOfItems 1 ;
+            :copyNote "Has coffee stains";
+            :shelfControlNumber "Källarplats 32" ] .
+
+# Example library
+</some?type=Organization&notation=Bibliotek1> a :Organization ;
+    :name "Bibliotek Ett" .
+
+# Department of Example library
+</some?type=Organization&notation=Bibliotek1-källaren> a :Organization ;
+    :memberOf </some?type=Organization&notation=Bibliotek1> ;
+    :name "Källarförrådet på Bibliotek Ett" .
+
+
+# The Bibliographic Entity
+# (The prototypical product model of a book in hardcover form.)
+</fxql7jqr38b1dkf#it> a :Book, :ProductModel;
+    :sameAs <http://libris.kb.se/resource/bib/7149593> ;
+    :hasFormat :Hardcover ;
+    :title "Anteckningar från en ö" .
