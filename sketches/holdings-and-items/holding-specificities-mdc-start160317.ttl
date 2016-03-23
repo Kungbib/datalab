@@ -1,8 +1,11 @@
 # NOTE: This is a sketch. Not all terms used here have been defined yet.
-@prefix : <https://id.kb.se/vocab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix sdo: <http://schema.org/> .
 @prefix bf1: <http://bibframe.org/vocab/> .
 @prefix bf2: <http://bibframe.org/vocab/> . # TODO: new URI?
+@prefix : <https://id.kb.se/vocab/> .
 @base <https://libris.kb.se/> .
 
 ## Things under consideration
@@ -26,38 +29,38 @@
 
 
 # The Holding
-</pt0tb0rv33gksdj#it> a :SomeProducts ;
+</pt0tb0rv33gksdj#it> a sdo:SomeProducts, sdo:Offer, bf1:HeldMaterial, bf2:Item ;
     :acquisitionStatus :CurrentlyReceived ;
-    :numberOfItems 11 ;
     :retentionPolicy :PermanentlyRetained ;
-    :heldBy </some?type=Organization&notation=Bibliotek1> ;
-    :holdingFor </fxql7jqr38b1dkf#it> ;
+    sdo:inventoryLevel 11 ;
+    bf1:heldBy </organization/Bibliotek1> ;
+    bf1:holdingFor </fxql7jqr38b1dkf#it> ;
     :moreSpecifically
-        [ a :SomeProducts ;
-            :numberOfItems 4 ;
-            :shelfControlNumber "168113" ] ,
-        [ a :SomeProducts ;
-            :numberOfItems 6 ;
-            :shelfControlNumber "164565" ] ,
-        [ a :IndividualProduct ;
-            :heldBy </some?type=Organization&notation=Bibliotek1-källaren> ;
-            :numberOfItems 1 ;
-            :copyNote "Has coffee stains";
-            :shelfControlNumber "Källarplats 32" ] .
+        [ a sdo:SomeProducts ;
+            sdo:inventoryLevel 4 ;
+            bf1:shelfMark "168113" ] ,
+        [ a sdo:SomeProducts ;
+            sdo:inventoryLevel 6 ;
+            bf1:shelfMark "164565" ] ,
+        [ a sdo:IndividualProduct ;
+            bf1:heldBy </organization/Bibliotek1-källaren> ;
+            sdo:inventoryLevel 1 ;
+            bf1:copyNote "Has coffee stains";
+            bf1:shelfMark "Källarplats 32" ] .
 
 # Example library
-</some?type=Organization&notation=Bibliotek1> a :Organization ;
-    :name "Bibliotek Ett" .
+</organization/Bibliotek1> a org:Organization ;
+    sdo:name "Bibliotek Ett" .
 
 # Department of Example library
-</some?type=Organization&notation=Bibliotek1-källaren> a :Organization ;
-    :memberOf </some?type=Organization&notation=Bibliotek1> ;
-    :name "Källarförrådet på Bibliotek Ett" .
+</organization/Bibliotek1-källaren> a org:OrganizationalUnit ;
+    org:memberOf </some?type=Organization/Bibliotek1> ;
+    sdo:name "Källarförrådet på Bibliotek Ett" .
 
 
 # The Bibliographic Entity
 # (The prototypical product model of a book in hardcover form.)
-</fxql7jqr38b1dkf#it> a :Book, :ProductModel;
-    :sameAs <http://libris.kb.se/resource/bib/7149593> ;
-    :hasFormat :Hardcover ;
-    :title "Anteckningar från en ö" .
+</fxql7jqr38b1dkf#it> a sdo:Book, sdo:ProductModel;
+    owl:sameAs <http://libris.kb.se/resource/bib/7149593> ;
+    dct:hasFormat :Hardcover ;
+    dct::title "Anteckningar från en ö" .
