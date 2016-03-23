@@ -54,7 +54,7 @@
 
 # Department of Example library
 </organization/Bibliotek1-källaren> a org:OrganizationalUnit ;
-    org:memberOf </some?type=Organization/Bibliotek1> ;
+    org:memberOf </organization/Bibliotek1> ;
     sdo:name "Källarförrådet på Bibliotek Ett" .
 
 
