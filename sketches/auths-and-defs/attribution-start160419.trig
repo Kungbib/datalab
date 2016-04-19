@@ -1,0 +1,33 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix bibo: <http://purl.org/ontology/bibo/>
+prefix : <https://id.kb.se/vocab/>
+
+<model> {
+    :attributedTo owl:equivalentProperty prov:wasAttributedTo .
+    :Attribution owl:equivalentClass prov:Attribution .
+    :MainAttribution rdfs:subClassOf :Attribution .
+    :AdditionalAttribution rdfs:subClassOf :Attribution .
+}
+
+<anteckingar-från-en-ö> a :Book;
+    :qualifiedAttribution [ a :MainAttribution;  # 100
+            :role :creator; # $4
+            :agent <tovej> # $a
+        ], [ a :AdditionalAttribution; # 700
+            :role :creator; # $4
+            #:roleNote "inspiration och process"; # $e
+            :agent <tulikkip> # $a
+        ] .
+
+# Heuristics will define how these simple forms will map to/from the qualified form
+
+<anteckingar-från-en-ö>
+    :creator <tovej>; :contributor <tulikkip> .
+
+<anteckingar-från-en-ö>
+    :creator <tovej>, <tulikkip> .
+
+<anteckingar-från-en-ö>
+    bibo:authorList (<tovej> <tulikkip>) .
