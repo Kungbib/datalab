@@ -1,0 +1,28 @@
+PREFIX madsrdf: <http://www.loc.gov/mads/rdf/v1#>
+
+CONSTRUCT {
+
+    ?name a madsrdf:PersonalName ;
+        madsrdf:identifiesRWO ?s ;
+        madsrdf:elementList (
+            ?givenElem
+            ?famnameElem
+        ) .
+
+        ?famnameElem a madsrdf:FamilyNameElement ; madsrdf:elementValue ?familyName .
+        ?givenElem a madsrdf:GivenNameElement ; madsrdf:elementValue ?givenName .
+
+} WHERE {
+
+    ?s a :Person .
+    BIND(bnode() as ?name)
+
+    OPTIONAL {
+        ?s :familyName ?familyName .
+        BIND(bnode() as ?famnameElem)
+    }
+    OPTIONAL {
+        ?s givenName ?givenName .
+        BIND(bnode() as ?givenElem)
+    }
+}
