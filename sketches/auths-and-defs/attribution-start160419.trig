@@ -2,32 +2,48 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix prov: <http://www.w3.org/ns/prov#>
 prefix bibo: <http://purl.org/ontology/bibo/>
-prefix : <https://id.kb.se/vocab/>
+prefix bf1: <http://bibframe.org/vocab/>
+prefix bf2: <http://id.loc.gov/ontologies/bibframe/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#>
+prefix marcrel: <http://id.loc.gov/vocabulary/relators/>
+prefix wip: <http://example.org/work-in-progress/>
+prefix legacy: <http://example.org/legacy/>
 
 <model> {
-    :attributedTo owl:equivalentProperty prov:wasAttributedTo .
-    :Attribution owl:equivalentClass prov:Attribution .
-    :MainAttribution rdfs:subClassOf :Attribution .
-    :AdditionalAttribution rdfs:subClassOf :Attribution .
+    bf2:contribution rdfs:subPropertyOf prov:qualifiedAttribution .
+    #wip:AccessPointComponent rdfs:subClassOf prov:Attribution .
 }
 
-<anteckingar-från-en-ö> a :Book;
-    :qualifiedAttribution [ a :MainAttribution;  # 100
-            :role :creator; # $4
-            :agent <tovej> # $a
-        ], [ a :AdditionalAttribution; # 700
-            :role :creator; # $4
-            #:roleNote "inspiration och process"; # $e
-            :agent <tulikkip> # $a
+#<anteckningar-från-en-ö#concept> a wip:BookTerm, skos:Concept;
+#    madsrdf:componentList (<tovej>) ;
+#    foaf:focus <anteckningar-från-en-ö> .
+
+<anteckningar-från-en-ö> a bibo:Book;
+    # Alternatives to capture "access point"
+    #skos:prefLabel | madsrdf:authoritativeLabel
+    #bf1:authorizedAccessPoint "Anteckningar från en ö : Jansson, Tove 19xx-19yy"
+    #wip:hasAccessPointPart <tovej>;
+
+    #:creator <tovej>;
+    #marcrel:ill <tovej>;
+    bf2:contribution [ a bf2:Contribution, legacy:MainEntry; # To capture "100"
+            # NOTE: prov:hadRole used to capture linked roles, instead of a
+            # separate dc:creator link (seen commented above)
+            prov:hadRole :creator; # $4 #, marcrel:ill
+            bf2:agent <tovej> # $a
+        ], [ a bf2:Contribution; # all other as 700
+            bf2:role "inspiration och process"; # $e
+            bf2:agent <tulikkip> # $a
         ] .
 
 # Heuristics will define how these simple forms will map to/from the qualified form
 
-<anteckingar-från-en-ö>
+<anteckningar-från-en-ö>
     :creator <tovej>; :contributor <tulikkip> .
 
-<anteckingar-från-en-ö>
+<anteckningar-från-en-ö>
     :creator <tovej>, <tulikkip> .
 
-<anteckingar-från-en-ö>
+<anteckningar-från-en-ö>
     bibo:authorList (<tovej> <tulikkip>) .
