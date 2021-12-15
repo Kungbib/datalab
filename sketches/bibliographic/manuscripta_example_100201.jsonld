@@ -1,0 +1,91 @@
+{
+  "@context": "https://id.kb.se/context.jsonld",
+  "@id": "https://www.manuscripta.se/ms/100201",
+  "@type": "Manuscript",
+  "hasTitle": [
+    {
+      "@type": "Title",
+      "mainTitle": "Utläggningar och översättningar av den heliga Skrift (Moseböckerna, Pentateukparafrasen)"
+    }
+  ],
+  "instanceOf": {
+    "@type": "ManuscriptText",
+    "contribution": [],
+    "language": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/non-swe"
+      }
+    ],
+    "genreForm": [
+      {
+        "@id": "https://id.kb.se/term/saogf/Manuskript"
+      },
+      {
+        "@id": "https://id.kb.se/marc/NotFictionNotFurtherSpecified"
+      }
+    ]
+  },
+  "extent": [
+    {
+      "@type": "Extent",
+      "label": "258 ff."
+    }
+  ],
+  "hasDimensions": {
+    "@type": "Dimensions",
+    "label": [
+      "435 mm × 300 mm × 85 mm"
+    ]
+  },
+  "carrierType": {
+    "@id": "https://id.kb.se/term/rda/carrier/volume"
+  },
+  "baseMaterial": {
+    "@type": "BaseMaterial",
+    "label": "Pergament"
+  },
+  "physicalDetailsNote": "",
+  "publication": [
+    {
+      "@type": "PrimaryPublication",
+      "year": "1526"
+    }
+  ],
+  "meta": {
+    "@type": "Record",
+    "assigner": {
+      "@type": "Agent",
+      "label": "manuscripta.se"
+    },
+    "descriptionCreator": [
+      {
+        "@type": "Person",
+        "name": "Patrik Åström",
+        "marc:relatedAs": {
+          "role": [
+            {
+              "@id": "https://id.kb.se/relator/dtm"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Patrik Granholm",
+        "marc:relatedAs": {
+          "role": [
+            {
+              "@id": "https://id.kb.se/relator/dtm"
+            }
+          ]
+        }
+      }
+    ],
+    "descriptionLanguage": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/sv"
+      }
+    ],
+    "creationDate": "2018"
+  }
+}
