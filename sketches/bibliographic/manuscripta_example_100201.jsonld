@@ -9,11 +9,10 @@
     }
   ],
   "instanceOf": {
-    "@type": "ManuscriptText",
-    "contribution": [],
+    "@type": "Text",
     "language": [
       {
-        "@id": "http://id.loc.gov/vocabulary/iso639-1/non-swe"
+        "@id": "https://id.kb.se/language/9fs"
       }
     ],
     "genreForm": [
@@ -41,13 +40,14 @@
     "@id": "https://id.kb.se/term/rda/carrier/volume"
   },
   "baseMaterial": {
-    "@type": "BaseMaterial",
-    "label": "Pergament"
+    "@id": "https://id.kb.se/material/Parchment"
   },
-  "physicalDetailsNote": "",
+  "physicalDetailsNote": "illustrationer",
   "publication": [
     {
       "@type": "PrimaryPublication",
+      "country": "https://id.kb.se/country/sw",
+      "place": "Vadstena",
       "year": "1526"
     }
   ],
@@ -56,6 +56,9 @@
     "assigner": {
       "@type": "Agent",
       "label": "manuscripta.se"
+    },
+    "derivedFrom": {
+      "@id": "https://www.manuscripta.se/ms/100201"
     },
     "descriptionCreator": [
       {
@@ -83,7 +86,7 @@
     ],
     "descriptionLanguage": [
       {
-        "@id": "http://id.loc.gov/vocabulary/iso639-1/sv"
+        "@id": "https://id.kb.se/language/swe"
       }
     ],
     "creationDate": "2018"
