@@ -60,30 +60,6 @@
     "derivedFrom": {
       "@id": "https://www.manuscripta.se/ms/100201"
     },
-    "descriptionCreator": [
-      {
-        "@type": "Person",
-        "name": "Patrik Åström",
-        "marc:relatedAs": {
-          "role": [
-            {
-              "@id": "https://id.kb.se/relator/dtm"
-            }
-          ]
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Patrik Granholm",
-        "marc:relatedAs": {
-          "role": [
-            {
-              "@id": "https://id.kb.se/relator/dtm"
-            }
-          ]
-        }
-      }
-    ],
     "descriptionLanguage": [
       {
         "@id": "https://id.kb.se/language/swe"
