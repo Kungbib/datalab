@@ -61,6 +61,7 @@
         "@id": "https://id.kb.se/language/swe"
       }
     ],
-    "creationDate": "2018"
+    "creationDate": "2018",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }
