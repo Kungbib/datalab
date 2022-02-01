@@ -53,10 +53,6 @@
   ],
   "meta": {
     "@type": "Record",
-    "assigner": {
-      "@type": "Agent",
-      "label": "manuscripta.se"
-    },
     "derivedFrom": {
       "@id": "https://www.manuscripta.se/ms/100201"
     },
