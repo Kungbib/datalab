@@ -53,42 +53,15 @@
   ],
   "meta": {
     "@type": "Record",
-    "assigner": {
-      "@type": "Agent",
-      "label": "manuscripta.se"
-    },
     "derivedFrom": {
       "@id": "https://www.manuscripta.se/ms/100201"
     },
-    "descriptionCreator": [
-      {
-        "@type": "Person",
-        "name": "Patrik Åström",
-        "marc:relatedAs": {
-          "role": [
-            {
-              "@id": "https://id.kb.se/relator/dtm"
-            }
-          ]
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Patrik Granholm",
-        "marc:relatedAs": {
-          "role": [
-            {
-              "@id": "https://id.kb.se/relator/dtm"
-            }
-          ]
-        }
-      }
-    ],
     "descriptionLanguage": [
       {
         "@id": "https://id.kb.se/language/swe"
       }
     ],
-    "creationDate": "2018"
+    "creationDate": "2018",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }
