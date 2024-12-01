@@ -1,0 +1,17 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:rs="http://www.openarchives.org/rs/terms/">
+  <rs:md capability="resourcelist" at="2021-12-14T00:04:00Z"/>
+  <rs:ln rel="up" href="https://manuscripta.se/sync/capabilitylist.xml"/>
+  <rs:ln rel="self" href="https://manuscripta.se/sync/sitemap.xml"/>
+  <url>
+      <loc>https://manuscripta.se/ms/100201</loc>
+      <lastmod>2021-12-14T00:03:00Z</lastmod>
+      <rs:md at="2021-12-14T00:03:00Z"/>
+      <rs:ln rel="alternate" href="https://manuscripta.se/ms/100201.xml"
+             hash="sha-256:bf2ceb8d0b021128f70ae46c795c6be6fffdbf6014bf812efe9e78f6d0f924fa"
+             length="7940" type="application/xml"/>
+      <rs:ln rel="alternate" href="https://manuscripta.se/export/ms/100201"
+             hash="sha-256:c23df88ac872ed30512f12ad5cc77f85a1abead380219fe060eb30a75d3bc64a"
+             length="2622" type="application/ld+json"/>
+  </url>
+</urlset>
